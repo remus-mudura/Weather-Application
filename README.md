@@ -18,4 +18,4 @@ Designing and building the Weather Application taught me a lot since it was my f
 
 # App Overview
 
-<a href="https://weather.aniqa.dev" target="_blank"><img src="https://user-images.githubusercontent.com/117897508/230969466-e0b3ac8b-41fb-4b6d-887f-5bc34bbb3be4.png" style="max-width: 100%;"></a>
+<a><img src="https://user-images.githubusercontent.com/117897508/230969466-e0b3ac8b-41fb-4b6d-887f-5bc34bbb3be4.png" style="max-width: 100%;"></a>
