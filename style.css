@@ -26,7 +26,7 @@ body {
     font-family: "Open Sans", Arial, sans-serif;
     font-weight: 300;
     font-size: 22px;
-    filter: blur(15px);
+    filter: blur(5px);
     transition: filter 0.5s;
 }
 .weather {
@@ -57,6 +57,10 @@ body {
 .weatherImage {
     width: 30vmin;
     align-self: center;
+}
+.weatherCityContainer {
+    display: flex;
+    align-items: center;
 }
 .weatherCity {
     font-size: 36px;
@@ -89,7 +93,9 @@ body {
 .weatherTemperature {
     font-size: 60px;
 }
-.weatherForecast {
+.weatherForecast,
+.weatherForecastOtherCities,
+.weatherForecastFavoriteCities {
     width: 100%;
     text-align: center;
     display: flex;
@@ -99,7 +105,8 @@ body {
 .weatherForecastIcon {
     max-width: 50%;
 }
-.weatherForecastItem {
+.weatherForecastItem,
+.weatherForecastItemOtherCity {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin: 0 10px 10px;
@@ -109,3 +116,189 @@ body {
     width: calc(20% - 20px);
     flex-grow: 1;
 }
+.weatherForecastItem:hover {
+    transform: scale(1.02);
+    transition: all 0.1s ease;
+}
+.weatherForecastItemOtherCity:hover {
+    cursor: pointer;
+}
+
+.buttonCurrentLocation {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.1s ease;
+    border-radius: 10px;
+}
+.buttonCurrentLocation:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.weatherForecastItemOtherCity {
+    position: relative;
+    z-index: 1;
+}
+
+.weatherForecastFavorites {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 2;
+}
+.weatherForecastFavorites.relative {
+    position: relative;
+}
+.weatherForecastCity {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* Star icon - start */
+.star {
+    position: relative;
+
+    display: inline-block;
+    width: 0;
+    height: 0;
+
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    margin-bottom: 1.2em;
+
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.7em solid #fff;
+    border-left: 0.3em solid transparent;
+    font-size: 20px;
+}
+.star:hover {
+    cursor: pointer;
+}
+
+.star:before,
+.star:after {
+    content: "";
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid #fff;
+    border-left: 1em solid transparent;
+
+    transform: rotate(-35deg);
+}
+
+.star:after {
+    transform: rotate(35deg);
+}
+
+.weatherForecastFavorites.favorite .star,
+.weatherForecastFavorites.favorite .star:after,
+.weatherForecastFavorites.favorite .star:before {
+    border-bottom-color: #eeaa2a;
+}
+/* Star icon - end */
+
+/* Preloader - start */
+#preloader-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #fff;
+}
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* Preloader - end */

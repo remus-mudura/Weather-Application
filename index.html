@@ -9,11 +9,30 @@
         <link rel="shortcut icon" href="images/clear-sky.png" />
     </head>
     <body>
+        <div id="preloader-container">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
         <div class="weather">
             <input type="search" class="weatherSearch" placeholder="Your City" />
+            <button class="buttonCurrentLocation" onclick="currentLocationWeather()">Get weather in my location</button>
             <div class="weatherToday">
                 <div class="weatherDetails">
-                    <h2 class="weatherCity">City</h2>
+                    <div class="weatherCityContainer">
+                        <h2 class="weatherCity">City</h2>
+                    </div>
                     <p class="weatherDay">Day</p>
                     <div class="weatherCurrent">
                         <p class="weatherNow">Current condition: <span class="value">Sunny</span></p>
@@ -52,7 +71,16 @@
                     <p class="weatherForecastTemperature"><span class="value">+25</span> &deg;C</p>
                 </article>
             </div>
+            <div class="otherCities">
+                <p>Weather in other cities:</p>
+                <div class="weatherForecastOtherCities"></div>
+            </div>
+            <div class="favoriteCities">
+                <p>Favorite cities:</p>
+                <div class="weatherForecastFavoriteCities"></div>
+            </div>
         </div>
+
         <script src="script.js"></script>
     </body>
 </html>
