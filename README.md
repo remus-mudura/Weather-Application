@@ -2,7 +2,7 @@
 
 The Weather Application provides an overview of weather conditions in the specified city with an option to add cities to favorites. "Weather in other cities" provides access to random major cities and their current weather.
 
-** Please start the application using Live Server extension in Visual Studio Code **
+** Please start the application using Live Server extension in Visual Studio Code ** <br>
 ** To check the weather in your desired city, type the city name in the search bar, then press ENTER **
 
 # Key Features
@@ -16,7 +16,7 @@ Designing and building the Weather Application taught me a lot since it was my f
 -   Created reusable functions to make API calls for searches, geolocation, and clicking on the cities in the "other" or "favorite" sections
 -   Responsive application
 -   Animated icons
--   Built using <a href="https://openweathermap.org/api">OpenWeather API</a>
+-   Built using <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeather API</a>
 
 # App Overview
 
