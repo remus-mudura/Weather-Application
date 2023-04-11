@@ -16,7 +16,7 @@ Designing and building the Weather Application taught me a lot since it was my f
 -   Created reusable functions to make API calls for searches, geolocation, and clicking on the cities in the "other" or "favorite" sections
 -   Responsive application
 -   Animated icons
--   Built using <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeather API</a>
+-   Built using <a href="https://openweathermap.org/api" target="_blank">OpenWeather API</a>
 
 # App Overview
 
