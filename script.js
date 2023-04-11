@@ -53,7 +53,7 @@ let weatherImages = [
         ids: [200, 201, 202, 210, 211, 212, 221, 230, 231, 232],
     },
 ];
-const cities = ["Bucharest", "London", "Paris", "Madrid", "Budapest", "Amsterdam", "Lisbon"];
+const cities = ["Bucharest", "London", "Paris", "Madrid", "Budapest", "Amsterdam", "Lisbon", "Barcelona", "Prague", "Brussels", "Berlin"];
 
 let getWeatherByCityName = async (city) => {
     // This function gets the weather details for the current day (based on the city name)
